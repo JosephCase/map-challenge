@@ -1,15 +1,33 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import GoogleMapsProvider from "./GoogleMapsProvider";
+
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  useQuery,
+  gql,
+} from "@apollo/client";
+
+export const apolloClient = new ApolloClient({
+  uri: "https://stuart-frontend-challenge.vercel.app/graphql",
+  cache: new InMemoryCache(),
+});
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <GoogleMapsProvider>
+      <ApolloProvider client={apolloClient}>
+        <App />
+      </ApolloProvider>
+    </GoogleMapsProvider>
   </React.StrictMode>
 );
 
