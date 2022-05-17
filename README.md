@@ -10,5 +10,6 @@ Generally I feel like several parts of the app could be improved with a little m
 - The map should zoom and center to show the pickup and dropoff points.
 - I think the error badge should only appear when the user blurs the field, not when they are typing.
 - I would add an error toast in case the job creation fails.
-- Perhaps some subtl indication to the user that the address is being geocoded.
+- Perhaps some subtle indication to the user that the address is being geocoded.
 - For a larger app I would use a better styling library (or pattern) like styled-components.
+- Think about responsive styling.
