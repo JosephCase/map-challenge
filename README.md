@@ -13,3 +13,4 @@ Generally I feel like several parts of the app could be improved with a little m
 - Perhaps some subtle indication to the user that the address is being geocoded.
 - For a larger app I would use a better styling library (or pattern) like styled-components.
 - Think about responsive styling.
+- Generally tidying up - there are still some leftovers from CRA boilerplate.
