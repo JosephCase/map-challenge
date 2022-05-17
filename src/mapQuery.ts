@@ -1,7 +1,7 @@
 import { gql, useMutation, useQuery } from "@apollo/client";
 import { apolloClient } from ".";
 
-type Address = { address: string; latitude: number; longitude: number };
+export type Address = { address: string; latitude: number; longitude: number };
 
 type GeocodeRequest = { address: string };
 type GeocodeResponse = { geocode: { longitude: number; latitude: number } };

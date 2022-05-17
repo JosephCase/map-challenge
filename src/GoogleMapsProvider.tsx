@@ -21,8 +21,6 @@ const GoogleMapsProvider = ({ children }: Props) => {
       const ggApi = await loader.load();
       setGoogleApi(ggApi);
     }
-    // load the api if not already loaded
-    console.log({ googleApi });
     initGoogle();
   }, []);
 

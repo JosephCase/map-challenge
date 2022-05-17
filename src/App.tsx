@@ -15,34 +15,9 @@ import pickUpBadgeError from "./assets/pickUpBadgeError.svg";
 import pickUpBadgePresent from "./assets/pickUpBadgePresent.svg";
 import { MapContext } from "./GoogleMapsProvider";
 import mapQueries from "./mapQuery";
+import useMarker from "./useMarker";
 
-// represent an address as a marker on a map
-const useMarker = (
-  map: google.maps.Map<never> | null,
-  address: { latitude?: number; longitude?: number },
-  icon: string
-) => {
-  const markerRef = useRef(new google.maps.Marker({ icon }));
 
-  // set the map
-  useEffect(() => {
-    markerRef.current.setMap(map);
-  }, [map]);
-
-  // set the position
-  useEffect(() => {
-    if (address.longitude && address.latitude) {
-      markerRef.current.setPosition({
-        lat: address.latitude,
-        lng: address.longitude,
-      });
-    } else {
-      markerRef.current.setPosition(null);
-    }
-  }, [address]);
-
-  return markerRef.current;
-};
 
 type Address = {
   address: string;
@@ -198,7 +173,7 @@ function App() {
             disabled={isSubmitDisabled}
             onClick={handleSubmit}
             className="jobButton"
-            // this is a bit crude, but okay for this size
+            // this is a bit crude
             style={{ opacity: isSubmitDisabled ? "50%" : "100%" }}
           >
             {createJobRequest.loading ? "Creating..." : "Create job"}

@@ -1,17 +1,13 @@
+import {
+  ApolloClient, ApolloProvider, InMemoryCache
+} from "@apollo/client";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
 import App from "./App";
-import reportWebVitals from "./reportWebVitals";
 import GoogleMapsProvider from "./GoogleMapsProvider";
+import "./index.css";
+import reportWebVitals from "./reportWebVitals";
 
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-  useQuery,
-  gql,
-} from "@apollo/client";
 
 export const apolloClient = new ApolloClient({
   uri: "https://stuart-frontend-challenge.vercel.app/graphql",
